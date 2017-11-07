@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context
+        http://www.springframework.org/schema/data/mongo
+        http://www.springframework.org/schema/data/mongo/spring-mongo">
+
+    <!-- load mongo properties file -->
+    <context:property-placeholder location="classpath:mongo-config.properties"/>
+
+    <mongo:mongo id="mongo" replica-set="${mongo.hostPort}">
+        <mongo:options
+            connections-per-host="${mongo.connectionsPerHost}"
+            threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+            connect-timeout="${mongo.connectTimeout}"
+            max-wait-time="${mongo.maxWaitTime}"
+            auto-connect-retry="${mongo.autoConnectRetry}"
+            socket-keep-alive="${mongo.socketKeepAlive}"
+            socket-timeout="${mongo.socketTimeout}"
+            slave-ok="${mongo.slaveOk}"
+            write-fsync="true"
+            write-number="1"
+            write-timeout="0"/>
+    </mongo:mongo>
+
+    <mongo:db-factory dbname="jjuina" mongo-ref="mongo"/>
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg ref="mongoDbFactory"/>
+        <constructor-arg value="jjuina"/>
+    </bean>
+
+    <mongo:mapping-converter base-package="com.jjuina.model"/>
+
+    <mongo:repositories base-package="com.jjuina"/>
+</beans>
