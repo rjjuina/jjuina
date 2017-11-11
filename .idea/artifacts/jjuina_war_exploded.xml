@@ -21,9 +21,11 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.11.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.13" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.13" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.1.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:3.4.0" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.27-incubating" />
         </element>
       </element>
       <element id="directory" name="META-INF">
