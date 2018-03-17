@@ -2,20 +2,18 @@ package com.jjuina.controller;
 
 
 import com.jjuina.model.Car;
-import com.jjuina.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("car")
-public class FtlController {
+public class CarController {
 
     private static List<Car> carList = new ArrayList<Car>();
 
@@ -28,9 +26,8 @@ public class FtlController {
     @RequestMapping(value = "/getAllCars", method = RequestMethod.GET)
     public ModelAndView getAllStudents() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("helloWorld");
+        mav.setViewName("carDisplay");
         mav.addObject("carList", carList);
-        mav.addObject("testaaa", "This is from model");
         return mav;
     }
 
