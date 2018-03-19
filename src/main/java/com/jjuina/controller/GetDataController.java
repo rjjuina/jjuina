@@ -1,6 +1,7 @@
 package com.jjuina.controller;
 
 import com.jjuina.utils.HttpHelper;
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,8 @@ public class GetDataController {
 
     @RequestMapping(value = "/doHttpRequest", method = RequestMethod.POST)
     public ModelAndView getRegionCodesFromSemKeywordEntityRecognitionService(@RequestParam("requestUrl") String requestUrl, @RequestParam("destinations") String destinations) {
-        List<String> dess = Arrays.asList(destinations.split(","));
+
+        List<String> dess = Arrays.asList(StringUtils.deleteWhitespace(destinations).replace("\"", "").split(","));
         handleResult(dess, requestUrl);
 
         return new ModelAndView("redirect:getAll");
