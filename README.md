@@ -1,4 +1,8 @@
 # jjuina
-Spring MVC + Maven
-jsp
-ftl
+
+## How to build/run?
+
+```
+    mvn clean verify
+    mvn tomcat7:run
+```
