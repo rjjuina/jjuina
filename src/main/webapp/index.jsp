@@ -25,6 +25,19 @@
     </ul>
   </div>
 
+  <div class="svg-practice" style="margin-bottom: 200px">
+    <svg xmlns="http:/.www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 400 200" width="4in" height="2in">
+      <title xml:lang="en">Fill-rule comparision</title>
+      <rect fill="lightSkyBlue" height="100%" width="100%" />
+
+      <polygon id="p" fill="blueViolet" stroke="navy"
+        points="20,180 20,20 180,20 180,180 60,60 140,60"/>
+      <use xlink:href="#p" x="50%" fill-rule="evenodd" />
+    </svg>
+  </div>
+
   <%@include file="/WEB-INF/views/copyright_footer.html"%>
 </div>
 </body>
