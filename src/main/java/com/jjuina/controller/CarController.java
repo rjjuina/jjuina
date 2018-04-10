@@ -29,6 +29,8 @@ public class CarController {
 
     @RequestMapping(value = "/getAllCars", method = RequestMethod.GET)
     public ModelAndView getAllStudents() {
+        log.info("get all cars here");
+
         ModelAndView mav = new ModelAndView();
         mav.setViewName("carDisplay");
         mav.addObject("carList", carList);
@@ -38,6 +40,7 @@ public class CarController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ModelAndView addCar(@ModelAttribute("car") Car car) {
+        log.info("adding car here");
         if (null != car && null != car.getMake() && null != car.getModel()) {
             carList.add(car);
         }
