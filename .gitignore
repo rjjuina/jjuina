@@ -2,3 +2,6 @@
 lib/
 target/
 .idea/
+.project
+.settings
+.vscode
