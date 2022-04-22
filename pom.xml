@@ -9,7 +9,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <org.springframework-version>4.3.0.RELEASE</org.springframework-version>
+        <org.springframework-version>5.3.19</org.springframework-version>
         <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
